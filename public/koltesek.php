@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once "../config/database.php";
-
 if (!isset($_SESSION["user_id"])) {
     header("Location: login.php");
     exit;
@@ -19,16 +18,16 @@ if (!isset($_SESSION["user_id"])) {
 <h1>Bejelentkezett felhasználó:<?= htmlspecialchars($_SESSION["username"]) ?>! </h1>
 <nav>
     <ul>
-        <li><a href="dashboard.php">Dashboard</a></li>
-        <li><a href="../public/kategoriak.php">Kategóriák</a></li>
-        <li><a href="../public/koltesek.php">Költések</a></li>
+        <li><a href="../logicals/dashboard.php">Dashboard</a></li>
+        <li><a href="kategoriak.php">Kategóriák</a></li>
+        <li><a href="koltesek.php">Költések</a></li>
         <li><a href="logout.php">Kijelentkezés</a></li>
     </ul>
 </nav>
 
 <hr>
 
-<h2>Költéseid</h2>
+<h2>Költések</h2>
 
 </body>
 </html>
