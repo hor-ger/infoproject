@@ -22,7 +22,8 @@ if (!isset($_SESSION["user_id"])) {
         <li><a href="../logicals/dashboard.php">Dashboard</a></li>
         <li><a href="kategoriak.php">Kategóriák</a></li>
         <li><a href="koltesek.php">Költések</a></li>
-        <li><a href="logout.php">Kijelentkezés</a></li>
+        <li><a href="legolcsobb.php">Hol a legolcsóbb?</a></li>
+        <li><a href="../logicals/logout.php">Kijelentkezés</a></li>
     </ul>
 </nav>
 

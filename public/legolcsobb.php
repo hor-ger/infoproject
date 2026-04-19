@@ -1,35 +1,27 @@
 <?php
 session_start();
 require_once "../config/database.php";
-
-if (!isset($_SESSION["user_id"])) {
-    header("Location: login.php");
-    exit;
-}
 ?>
 
 <!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Hol a legolcsóbb?</title>
 </head>
 <body>
 
-<h1>Bejelentkezett felhasználó:<?= htmlspecialchars($_SESSION["username"]) ?>! </h1>
+<h1>Hol a legolcsóbb az adott termék?</h1>
 <nav>
     <ul>
-        <li><a href="dashboard.php">Dashboard</a></li>
+        <li><a href="../logicals/dashboard.php">Dashboard</a></li>
         <li><a href="../public/kategoriak.php">Kategóriák</a></li>
         <li><a href="../public/koltesek.php">Költések</a></li>
         <li><a href="../public/legolcsobb.php">Hol a legolcsóbb?</a></li>
-        <li><a href="logout.php">Kijelentkezés</a></li>
+        <li><a href="../logicals/logout.php">Kijelentkezés</a></li>
     </ul>
 </nav>
 
 <hr>
-
-<h2>Költéseid</h2>
-
 </body>
 </html>
