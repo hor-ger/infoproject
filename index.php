@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "../config/database.php";
+require_once __DIR__ . "/config/database.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,11 +14,11 @@ require_once "../config/database.php";
 <h1>Placeholder</h1>
 <nav>
     <ul>
-        <li><a href="../logicals/dashboard.php">Dashboard</a></li>
-        <li><a href="../public/kategoriak.php">Kategóriák</a></li>
-        <li><a href="../public/koltesek.php">Költések</a></li>
-        <li><a href="../public/legolcsobb.php">Hol a legolcsóbb?</a></li>
-        <li><a href="../logicals/logout.php">Kijelentkezés</a></li>
+        <li><a href="logicals/dashboard.php">Dashboard</a></li>
+        <li><a href="public/kategoriak.php">Kategóriák</a></li>
+        <li><a href="public/koltesek.php">Költések</a></li>
+        <li><a href="public/legolcsobb.php">Hol a legolcsóbb?</a></li>
+        <li><a href="logicals/logout.php">Kijelentkezés</a></li>
     </ul>
 </nav>
 
