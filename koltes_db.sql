@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `felhasznalok` (
   `id` int(11) NOT NULL,
   `felhasznalonev` varchar(50) NOT NULL,
-  `email` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NOT NULL,
   `teljnev` varchar(255) NOT NULL,
   `jelszo` varchar(255) NOT NULL,
   `letrehozva` timestamp NOT NULL DEFAULT current_timestamp()

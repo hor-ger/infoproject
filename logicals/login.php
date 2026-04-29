@@ -36,11 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <nav>
     <ul>
         <li><a href="../logicals/dashboard.php">Dashboard</a></li>
-        <li><a href="profil.php">Profil</a></li>
-        <li><a href="kategoriak.php">Kategóriák</a></li>
-        <li><a href="koltesek.php">Költések</a></li>
-        <li><a href="legolcsobb.php">Hol a legolcsóbb?</a></li>
-        <li><a href="mi.php">AI segítség</a></li>
+        <li><a href="../public/profil.php">Profil</a></li>
+        <li><a href="../public/kategoriak.php">Kategóriák</a></li>
+        <li><a href="../public/koltesek.php">Költések</a></li>
+        <li><a href="../public/legolcsobb.php">Hol a legolcsóbb?</a></li>
+        <li><a href="../public/mi.php">AI segítség</a></li>
     </ul>
 </nav>
 

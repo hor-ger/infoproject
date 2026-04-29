@@ -31,9 +31,7 @@ require_once __DIR__ . "/config/database.php";
 <li><b>Kategóriák:</b>Itt tudsz kategóriát hozzáadni amibe később költségeket tudsz adni, a már meglévő kategóriák látni, és ha szükséges, törölni őket</li>
 <li><b>Költések:</b>Itt tudsz felvenni költéseket, megadni milyen célból és mikor történt, milyen kategóriájú, és láthatod az összes eddig felvett költésed</li>
 <li><b>Segítség:</b>Mesterséges intelligencia segítségével kérhetsz segítséget költéseid optimalizálására</li>
-
 <li><b>Hol a legolcsóbb?</b>Itt a GVH elérhető adatbázisából kereséssel láthatod főleg élelmiszerek áráról melyik milyen boltban mennyibe kerül</li>
-
 </ul>
 </body>
 </html>

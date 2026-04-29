@@ -20,7 +20,7 @@ if (!isset($_SESSION["user_id"])) {
 <nav>
     <ul>
         <li><a href="dashboard.php">Dashboard</a></li>
-        <li><a href="../logicals/profil.php">Profil</a></li>
+        <li><a href="../public/profil.php">Profil</a></li>
         <li><a href="../public/kategoriak.php">Kategóriák</a></li>
         <li><a href="../public/koltesek.php">Költések</a></li>
         <li><a href="../public/legolcsobb.php">Hol a legolcsóbb?</a></li>
