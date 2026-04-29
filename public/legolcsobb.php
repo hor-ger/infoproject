@@ -11,17 +11,20 @@ require_once "../config/database.php";
 </head>
 <body>
 
-<h1>Hol a legolcsóbb az adott termék?</h1>
+<h1>Bejelentkezett felhasználó:<?= htmlspecialchars($_SESSION["username"]) ?> </h1>
 <nav>
     <ul>
         <li><a href="../logicals/dashboard.php">Dashboard</a></li>
+        <li><a href="../public/profil.php">Profil</a></li>
         <li><a href="../public/kategoriak.php">Kategóriák</a></li>
         <li><a href="../public/koltesek.php">Költések</a></li>
         <li><a href="../public/legolcsobb.php">Hol a legolcsóbb?</a></li>
+        <li><a href="mi.php">AI segítség</a></li>
         <li><a href="../logicals/logout.php">Kijelentkezés</a></li>
     </ul>
 </nav>
 
+<h1>Hol a legolcsóbb az adott termék?</h1>
 
  <?php
 $kereses = $_GET["kereses"] ?? "";
