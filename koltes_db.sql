@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Ápr 28. 19:03
+-- Létrehozás ideje: 2026. Ápr 29. 17:48
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `felhasznalok` (
   `id` int(11) NOT NULL,
   `felhasznalonev` varchar(50) NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
   `teljnev` varchar(255) NOT NULL,
   `jelszo` varchar(255) NOT NULL,
   `letrehozva` timestamp NOT NULL DEFAULT current_timestamp()
@@ -39,8 +40,8 @@ CREATE TABLE `felhasznalok` (
 -- A tábla adatainak kiíratása `felhasznalok`
 --
 
-INSERT INTO `felhasznalok` (`id`, `felhasznalonev`, `teljnev`, `jelszo`, `letrehozva`) VALUES
-(4, 'Nev', 'Új Név', '$2y$10$rg2RN.GbaO97a3n/7jVvV.z6t3Y4ntmTDUk8HhJ8sIaZyi/CuS6TS', '2026-04-18 12:29:54');
+INSERT INTO `felhasznalok` (`id`, `felhasznalonev`, `email`, `teljnev`, `jelszo`, `letrehozva`) VALUES
+(5, 'nev3', 'nev3@email.com', 'nev234', '$2y$10$OiibcW83g3hCEozAJjRmBuTaWEKOXvLNOVFwDancXzRKRLl1m7H8.', '2026-04-29 15:40:36');
 
 -- --------------------------------------------------------
 
@@ -54,15 +55,6 @@ CREATE TABLE `kategoriak` (
   `felhasznalo_id` int(11) NOT NULL,
   `letrehozva` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
-
---
--- A tábla adatainak kiíratása `kategoriak`
---
-
-INSERT INTO `kategoriak` (`id`, `nev`, `felhasznalo_id`, `letrehozva`) VALUES
-(15, 'Kat', 4, '2026-04-19 15:21:21'),
-(16, 'Étel', 4, '2026-04-22 18:55:40'),
-(17, 'Szórakozás', 4, '2026-04-22 18:56:22');
 
 -- --------------------------------------------------------
 
@@ -79,17 +71,6 @@ CREATE TABLE `koltesek` (
   `datum` date NOT NULL,
   `letrehozva` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
-
---
--- A tábla adatainak kiíratása `koltesek`
---
-
-INSERT INTO `koltesek` (`id`, `osszeg`, `kategoria_id`, `felhasznalo_id`, `megjegyzes`, `datum`, `letrehozva`) VALUES
-(1, 20000, 15, 4, 'Költés megjegyzése', '2026-04-19', '2026-04-19 15:21:36'),
-(2, 20000, 15, 4, 'Költés megjegyzése', '2026-04-19', '2026-04-19 15:21:37'),
-(3, 20000, 15, 4, 'Költés megjegyzése', '2026-04-19', '2026-04-19 15:21:38'),
-(4, 5000, 16, 4, 'Éttermi étkezés', '2026-04-15', '2026-04-22 18:55:57'),
-(5, 4000, 17, 4, 'Mozijegy', '2026-04-16', '2026-04-22 19:00:31');
 
 -- --------------------------------------------------------
 
@@ -25557,7 +25538,8 @@ INSERT INTO `termekek` (`id`, `termeknev`, `kat_azon`, `kat_nev`, `uzlet`, `egys
 --
 ALTER TABLE `felhasznalok`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `felhasznalonev` (`felhasznalonev`);
+  ADD UNIQUE KEY `felhasznalonev` (`felhasznalonev`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- A tábla indexei `kategoriak`
@@ -25590,7 +25572,7 @@ ALTER TABLE `termekek`
 -- AUTO_INCREMENT a táblához `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT a táblához `kategoriak`
