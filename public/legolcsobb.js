@@ -1,16 +1,23 @@
-document.getElementById('kereso_mezo').addEventListener('input', function() {
-    let keresendo = this.value;
+const keresoMezo = document.getElementById('kereso_mezo');
+const kategoriaSzuro = document.getElementById('kategoria_szuro');
 
-    if (keresendo.length >= 0) {
-        fetch('kereso.php?kereses=' + encodeURIComponent(keresendo))
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('eredmenyek').innerHTML = data;
-            })
-            .catch(error => console.error('Hiba:', error));
-    }
-});
+function frissitTalalatok() {
+    let keresendo = keresoMezo.value;
+    let kategoria = kategoriaSzuro.value;
 
-window.onload = () => {
-    document.getElementById('kereso_mezo').dispatchEvent(new Event('input'));
-};
+    let url = 'kereso.php?kereses=' + encodeURIComponent(keresendo) + 
+              '&kategoria=' + encodeURIComponent(kategoria);
+
+    fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('eredmenyek').innerHTML = data;
+        })
+        .catch(error => console.error('Hiba:', error));
+}
+
+keresoMezo.addEventListener('input', frissitTalalatok);
+
+kategoriaSzuro.addEventListener('change', frissitTalalatok);
+
+window.onload = frissitTalalatok;

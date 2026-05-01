@@ -106,7 +106,7 @@ if (isset($_POST["delete_id"])) {
 <tr>
     <td><?= htmlspecialchars($kat["nev"]) ?></td>
     <td><?= htmlspecialchars($kat["letrehozva"]) ?></td>
-    <td><form method="POST" style="display:inline;">
+    <td><form method="POST">
             <input type="hidden" name="delete_id" value="<?= $kat["id"] ?>">
             <button type="submit">Törlés</button>
         </form></td>

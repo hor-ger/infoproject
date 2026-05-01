@@ -1,6 +1,11 @@
 <?php
 session_start();
 require_once "../config/database.php";
+
+if (!isset($_SESSION["user_id"])) {
+    header("Location: ../logicals/login.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -26,27 +31,26 @@ require_once "../config/database.php";
 
 <h1>Hol a legolcsóbb az adott termék?</h1>
 
- <?php
-$kereses = $_GET["kereses"] ?? "";
-
-$stmt = $pdo->prepare("
-    SELECT *
-    FROM termekek
-    WHERE termeknev LIKE ?
-    ORDER BY min_ar ASC
-    LIMIT 25
-
-");
-
-
-$stmt->execute(["%$kereses%"]);
-
-$talalatok = $stmt->fetchAll(PDO::FETCH_ASSOC);
+<?php
+try {
+    $kat_stmt = $pdo->query("SELECT DISTINCT kat_nev FROM termekek WHERE kat_nev IS NOT NULL AND kat_nev != '' ORDER BY kat_nev ASC");
+    $kategoriak = $kat_stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Hiba a kategóriák betöltésekor: " . $e->getMessage());
+}
 ?>
-
 
 <form method="GET" onsubmit="return false;">
     <input type="text" id="kereso_mezo" placeholder="Termék keresése" autocomplete="off">
+    
+    <select id="kategoria_szuro">
+        <option value="">Összes kategória</option>
+        <?php foreach ($kategoriak as $kat): ?>
+            <option value="<?= htmlspecialchars($kat['kat_nev']) ?>">
+                <?= htmlspecialchars($kat['kat_nev']) ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
 </form>
 
 <table border="1">
@@ -64,9 +68,10 @@ $talalatok = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </tr>
     </thead>
     <tbody id="eredmenyek">
+        <!-- Itt a JS fogja megjeleníteni az adatokat -->
     </tbody>
 </table>
 
-<script src ="legolcsobb.js"></script>
+<script src="legolcsobb.js"></script>
 </body>
 </html>

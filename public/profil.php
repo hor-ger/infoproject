@@ -47,11 +47,12 @@ try {
 </nav>
 
 <h1>Profil részletei</h1>
-<p>Felhasználónév:<?php echo htmlspecialchars($fnev); ?></p>
-<p>Teljes név:<?php echo htmlspecialchars($teljes_nev); ?></p>
-<p>Email cím:<?php echo htmlspecialchars($email); ?></p>
-<p>Regisztráció ideje:<?php echo htmlspecialchars($reg_datum); ?></p>
-
+<ul>
+<li>Felhasználónév: <?php echo htmlspecialchars($fnev); ?></li>
+<li>Teljes név: <?php echo htmlspecialchars($teljes_nev); ?></li>
+<li>Email cím: <?php echo htmlspecialchars($email); ?></li>
+<li>Regisztráció ideje: <?php echo htmlspecialchars($reg_datum); ?></li>
+<ul>
 
 <h3>Jelszó megváltoztatása<h3>
 <form action="jelszo.php" method="POST">
