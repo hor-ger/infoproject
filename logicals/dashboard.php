@@ -13,17 +13,20 @@ if (!isset($_SESSION["user_id"])) {
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
 
 <h1>Bejelentkezett felhasználó:<?= htmlspecialchars($_SESSION["username"]) ?>! </h1>
 <nav>
     <ul>
+        <li><a href="../index.php">Home</a></li>
         <li><a href="dashboard.php">Dashboard</a></li>
         <li><a href="../public/profil.php">Profil</a></li>
         <li><a href="../public/kategoriak.php">Kategóriák</a></li>
         <li><a href="../public/koltesek.php">Költések</a></li>
-        <li><a href="../public/legolcsobb.php">Hol a legolcsóbb?</a></li>
+        <li><a href="../public/legolcsobb.php">Termékek</a></li>
+        <li><a href="../public/mi.php">AI segítség</a></li>
         <li><a href="logout.php">Kijelentkezés</a></li>
     </ul>
 </nav>

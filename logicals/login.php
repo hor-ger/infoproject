@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["user_id"] = $user["id"];
         $_SESSION["username"] = $user["felhasznalonev"];
 
-        header("Location: dashboard.php");
+        header("Location: ../index.php");
         exit;
 
     } else {
@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Belépés</title>
+    <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
 
@@ -39,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <li><a href="../public/profil.php">Profil</a></li>
         <li><a href="../public/kategoriak.php">Kategóriák</a></li>
         <li><a href="../public/koltesek.php">Költések</a></li>
-        <li><a href="../public/legolcsobb.php">Hol a legolcsóbb?</a></li>
+        <li><a href="../public/legolcsobb.php">Termékek</a></li>
         <li><a href="../public/mi.php">AI segítség</a></li>
     </ul>
 </nav>

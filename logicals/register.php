@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
     } catch (PDOException $e) {
-        $uzenet = "Hiba történt a mentés során.";
+        $uzenet = "Hiba történt a mentés során: " . $e->getMessage();
     }
 }
 ?>
@@ -57,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Regisztráció</title>
+    <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
 
