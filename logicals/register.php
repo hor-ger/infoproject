@@ -61,11 +61,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body>
 
+<nav>
+    <ul>
+        <li><a href="../logicals/dashboard.php">Dashboard</a></li>
+        <li><a href="../public/profil.php">Profil</a></li>
+        <li><a href="../public/kategoriak.php">Kategóriák</a></li>
+        <li><a href="../public/koltesek.php">Költések</a></li>
+        <li><a href="../public/legolcsobb.php">Termékek</a></li>
+        <li><a href="../public/mi.php">AI segítség</a></li>
+    </ul>
+</nav>
+
 <h2>Regisztráció</h2>
 
 <form method="POST">
     <input type="text" name="felhasznalonev" placeholder="Felhasználónév" required><br><br>
-    <input type="text" name="email" placeholder="Email" required><br><br>
+    <input type="email" name="email" placeholder="Email" required><br><br>
 	<input type="text" name="teljnev" placeholder="Teljes név" required><br><br>
     <input type="password" name="jelszo" placeholder="Jelszó" required><br><br>
     <input type="password" name="jelszo_ujra" placeholder="Jelszó újra" required><br><br>

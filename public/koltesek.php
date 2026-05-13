@@ -89,7 +89,7 @@ $koltesek = $stmt_list->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>Bejelentkezett felhasználó:<?= htmlspecialchars($_SESSION["username"]) ?> </h1>
+<h1 class="kozepre">Bejelentkezett felhasználó: <?= htmlspecialchars($_SESSION["username"]) ?> </h1>
 <nav>
     <ul>
         <li><a href="../index.php">Home</a></li>
@@ -149,7 +149,7 @@ $koltesek = $stmt_list->fetchAll(PDO::FETCH_ASSOC);
                     <td><?= htmlspecialchars($k["datum"]) ?></td>
                     <td>
         <a href="szerkesztes.php?id=<?= $k['id'] ?>"><button>Szerkesztés</button></a>
-<form method="POST" style="display:inline;" onsubmit="return confirm('Biztosan törölni szeretnéd ezt a költést?  Ez a művelet nem vonható vissza!');">
+		<form method="POST" style="display:inline; margin: 0; padding: 0;" onsubmit="return confirm('Biztosan törölni szeretnéd ezt a költést?  Ez a művelet nem vonható vissza!');">
     <input type="hidden" name="del_id" value="<?= $k["id"] ?>">
     <button type="submit">Törlés</button>
 </form></td>

@@ -15,7 +15,7 @@ if (!isset($_SESSION["user_id"])) {
     <title>Kategoriák</title>    <link rel="stylesheet" href="css/style.css"></head>
 <body>
 
-<h1>Bejelentkezett felhasználó:<?= htmlspecialchars($_SESSION["username"]) ?> </h1>
+<h1 class="kozepre">Bejelentkezett felhasználó: <?= htmlspecialchars($_SESSION["username"]) ?> </h1>
 <nav>
     <ul>
         <li><a href="../index.php">Home</a></li>
@@ -101,12 +101,13 @@ if (isset($_POST["delete_id"])) {
 <tr>
 <th>Kategória neve</th>
 <th>Létrehozás dátuma</th>
+<th></th>
 </tr>
 <?php foreach ($kategoriak as $kat): ?>
 <tr>
     <td><?= htmlspecialchars($kat["nev"]) ?></td>
     <td><?= htmlspecialchars($kat["letrehozva"]) ?></td>
-    <td><form method="POST">
+    <td><form style="display:inline; margin: 0; padding: 0;" method="POST">
             <input type="hidden" name="delete_id" value="<?= $kat["id"] ?>">
             <button type="submit">Törlés</button>
         </form></td>

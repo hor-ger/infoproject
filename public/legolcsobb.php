@@ -69,7 +69,7 @@ if (isset($_GET["added"])) {
 </head>
 <body>
 
-<h1>Bejelentkezett felhasználó:<?= htmlspecialchars($_SESSION["username"]) ?> </h1>
+<h1 class="kozepre">Bejelentkezett felhasználó: <?= htmlspecialchars($_SESSION["username"]) ?> </h1>
 <nav>
     <ul>
         <li><a href="../index.php">Home</a></li>
@@ -221,7 +221,7 @@ try {
                     <td><?= htmlspecialchars($termek['min_egysegar']) ?> Ft</td>
                     <td><?= htmlspecialchars($termek['max_egysegar']) ?> Ft</td>
                     <td>
-                        <form method="POST" style="margin:0;">
+                        <form method="POST" style="display:inline; margin: 0; padding: 0;">
                             <input type="hidden" name="add_termek_id" value="<?= htmlspecialchars($termek['id']) ?>">
                             <input type="hidden" name="current_page" value="<?= htmlspecialchars($page) ?>">
                             <button type="submit">+</button>

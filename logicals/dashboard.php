@@ -17,7 +17,7 @@ if (!isset($_SESSION["user_id"])) {
 </head>
 <body>
 
-<h1>Bejelentkezett felhasználó:<?= htmlspecialchars($_SESSION["username"]) ?>! </h1>
+<h1 class="kozepre">Bejelentkezett felhasználó: <?= htmlspecialchars($_SESSION["username"]) ?> </h1>
 <nav>
     <ul>
         <li><a href="../index.php">Home</a></li>

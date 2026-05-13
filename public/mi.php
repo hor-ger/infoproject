@@ -2,6 +2,10 @@
 session_start();
 require_once "../config/database.php";
 
+if (!isset($_SESSION["user_id"])) {
+    header("Location: ../logicals/login.php");
+    exit;
+}
 // --- AI CHATBOT LOGIKA ELEJE ---
 $botResponse = "";
 $operationResult = "";
@@ -90,7 +94,7 @@ function getUserExpenses($pdo, $user_id) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_message'])) {
     // IDE MÁSOLD BE AZ API KULCSODAT
-    $apiKey = "AIzaSyAhwjxIMqu5z0cnhE0TfKXDdapPMusGA4A";
+    $apiKey = "ideazapikulcs";
     $userMsg = trim($_POST['user_message']);
     $user_id = $_SESSION["user_id"] ?? null;
 
@@ -284,7 +288,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['user_message'])) {
 </head>
 <body>
 
-<h1>Bejelentkezett felhasználó: <?= htmlspecialchars($_SESSION["username"] ?? '') ?> </h1>
+<h1 class="kozepre">Bejelentkezett felhasználó: <?= htmlspecialchars($_SESSION["username"]) ?> </h1>
 <nav>
     <ul>
         <li><a href="../index.php">Home</a></li>
